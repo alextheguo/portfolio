@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Familjen_Grotesk, Inter } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/Header";
+import SiteChrome from "@/components/SiteChrome";
 
 const familjenGrotesk = Familjen_Grotesk({
   variable: "--font-display",
@@ -25,8 +25,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${familjenGrotesk.variable} ${inter.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <Header />
-        <div className="flex-1 flex flex-col pt-20">{children}</div>
+        <SiteChrome>{children}</SiteChrome>
       </body>
     </html>
   );
