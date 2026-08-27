@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Alexander Guo — design reference (Bold Minimal, yellow)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800;900&display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:Inter,sans-serif;background:#ffd964;color:#222121}
+.tag{font:600 10px ui-monospace,Menlo,monospace;letter-spacing:.5px;color:rgba(34,33,33,.4);padding:14px 24px 0}
+.nav{display:flex;gap:36px}
+.nav a{font:700 12px Inter;letter-spacing:1.5px;color:rgba(34,33,33,.6);text-decoration:none}
+.nav a:hover{color:#222121}
+.nav a.on{color:#222121;border-bottom:2px solid #222121;padding-bottom:3px}
+.head{display:flex;align-items:center;justify-content:space-between;padding:40px 56px}
+.mark{font:900 15px Inter;letter-spacing:1px}
+.pagetitle{font:900 120px/.85 Inter;letter-spacing:-5px}
+.thumb{aspect-ratio:16/9;border:1px solid rgba(34,33,33,.2);overflow:hidden;background:#222121}
+.thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.thumb iframe{width:100%;height:100%;border:0;display:block}
+.cardtitle{font:800 17px Inter;letter-spacing:-.5px;margin-top:12px}
+.blurb{font:600 14px/1.65 Inter;color:rgba(34,33,33,.7);max-width:420px;text-align:right}
+a{color:#222121}
+</style>
+</head>
+<body>
+
+<!-- ============ 1. HOME (reel-first) ============ -->
+<div class="tag">HOME — DIRECTING REEL</div>
+<section style="height:900px;position:relative;overflow:hidden;display:flex;flex-direction:column">
+  <!-- reel: cover-cropped, autoplay muted loop, controls off -->
+  <div style="position:absolute;inset:0;overflow:hidden">
+    <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);height:100%;width:auto;aspect-ratio:16/9;min-width:100%;min-height:100%">
+      <iframe src="https://www.youtube.com/embed/vpCQx8PgZYM?autoplay=1&mute=1&loop=1&playlist=vpCQx8PgZYM&controls=0&modestbranding=1&rel=0&playsinline=1" style="width:100%;height:100%;border:0;pointer-events:none;display:block" allow="autoplay; encrypted-media" title="Directing reel"></iframe>
+    </div>
+  </div>
+  <!-- yellow scrim keeps type legible over footage -->
+  <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,217,100,.55) 0%,rgba(255,217,100,.15) 45%,rgba(255,217,100,.94) 100%)"></div>
+
+  <div class="head" style="position:relative">
+    <div class="mark">AG</div>
+    <nav class="nav"><a href="#" class="on">REEL</a><a href="#">COMMERCIAL</a><a href="#">NARRATIVE</a><a href="#">ACTING</a><a href="#">ABOUT</a></nav>
+  </div>
+  <div style="position:relative;flex:1;display:flex;flex-direction:column;justify-content:center;padding:0 56px;gap:24px">
+    <h1 style="font:900 190px/.82 Inter;letter-spacing:-8px;margin:0">ALEXANDER<br>GUO</h1>
+    <div style="display:flex;align-items:center;gap:20px">
+      <div style="width:64px;height:4px;background:#222121"></div>
+      <div style="font:700 15px Inter;letter-spacing:3px;color:rgba(34,33,33,.55)">DIRECTOR &amp; ACTOR</div>
+    </div>
+  </div>
+  <div style="position:relative;display:flex;align-items:center;justify-content:space-between;padding:0 56px 40px">
+    <div style="display:flex;align-items:center;gap:16px">
+      <div style="width:52px;height:52px;border-radius:50%;background:#222121;color:#ffd964;display:flex;align-items:center;justify-content:center;font:900 13px Inter">&#9654;</div>
+      <div style="font:700 12px Inter;letter-spacing:2px;color:rgba(34,33,33,.7)">PLAY REEL WITH SOUND</div>
+    </div>
+    <div style="font:600 10px ui-monospace,monospace;letter-spacing:1px;color:rgba(34,33,33,.4)">SCROLL FOR SELECTED WORK &#8595;</div>
+  </div>
+</section>
+
+<div class="tag">HOME — SELECTED WORK (3 per category, commercial first)</div>
+<section style="padding:48px 56px 64px">
+  <div style="margin-bottom:52px">
+    <div style="display:flex;align-items:baseline;justify-content:space-between;border-bottom:1px solid rgba(34,33,33,.12);padding-bottom:14px;margin-bottom:22px">
+      <h2 style="font:800 34px Inter;letter-spacing:-1px;margin:0">Commercial</h2>
+      <a href="#" style="font:700 11px Inter;letter-spacing:1.5px;text-decoration:none">VIEW ALL (9) &#8594;</a>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
+      <div><div class="thumb"><img src="https://i.ytimg.com/vi/MNLG_Ar2ujQ/hqdefault.jpg" alt="TARS' First Day | Hypercard Expense"></div><div class="cardtitle" style="font-size:20px">&ldquo;TARS&rsquo; First Day&rdquo; | Hypercard Expense</div></div>
+      <div><div class="thumb"><img src="https://i.ytimg.com/vi/NQYnhVdDC2I/hqdefault.jpg" alt="BOTsession | LEMMA"></div><div class="cardtitle" style="font-size:20px">BOTsession | LEMMA</div></div>
+      <div><div class="thumb"><img src="https://i.ytimg.com/vi/aIQLkbTeDBg/hqdefault.jpg" alt="A Little Nudge | Blinkko"></div><div class="cardtitle" style="font-size:20px">&ldquo;A Little Nudge&rdquo; | Blinkko</div></div>
+    </div>
+  </div>
+  <div style="margin-bottom:52px">
+    <div style="display:flex;align-items:baseline;justify-content:space-between;border-bottom:1px solid rgba(34,33,33,.12);padding-bottom:14px;margin-bottom:22px">
+      <h2 style="font:800 34px Inter;letter-spacing:-1px;margin:0">Narrative</h2>
+      <a href="#" style="font:700 11px Inter;letter-spacing:1.5px;text-decoration:none">VIEW ALL (6) &#8594;</a>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
+      <div><div class="thumb"><img src="https://i.ytimg.com/vi/R-of3WR9EVg/hqdefault.jpg" alt="Veins"></div><div class="cardtitle" style="font-size:20px">Veins</div></div>
+      <div><div class="thumb"><img src="https://i.ytimg.com/vi/7AV_8Ull09g/hqdefault.jpg" alt="USB"></div><div class="cardtitle" style="font-size:20px">USB</div></div>
+      <div><div class="thumb"><img src="https://i.ytimg.com/vi/XAHEjHXXmYo/hqdefault.jpg" alt="Criterion"></div><div class="cardtitle" style="font-size:20px">Criterion</div></div>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1.2fr;gap:32px;align-items:center;border-top:1px solid rgba(34,33,33,.12);padding-top:28px">
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <h2 style="font:800 34px Inter;letter-spacing:-1px;margin:0">Acting</h2>
+      <a href="#" style="font:700 11px Inter;letter-spacing:1.5px;text-decoration:none">WATCH ACTING REELS &#8594;</a>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+      <div><div class="thumb"><img src="https://i.ytimg.com/vi/RT6Xv8AAvLk/hqdefault.jpg" alt="Dramatic reel"></div><div class="cardtitle">Dramatic Reel</div></div>
+      <div><div class="thumb"><img src="https://i.ytimg.com/vi/6DOFRy-SYH0/hqdefault.jpg" alt="Comedic reel"></div><div class="cardtitle">Comedic Reel</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2. COMMERCIAL ============ -->
+<div class="tag">COMMERCIAL — NEWEST FIRST</div>
+<section style="padding-bottom:64px;border-top:1px solid rgba(34,33,33,.12)">
+  <div class="head">
+    <div class="mark">AG</div>
+    <nav class="nav"><a href="#">REEL</a><a href="#" class="on">COMMERCIAL</a><a href="#">NARRATIVE</a><a href="#">ACTING</a><a href="#">ABOUT</a></nav>
+  </div>
+  <div style="padding:32px 56px 40px;display:flex;align-items:flex-end;justify-content:space-between">
+    <h1 class="pagetitle" style="margin:0">COMMERCIAL</h1>
+    <p class="blurb" style="margin:0">I treat every commercial like a short film. Even in thirty seconds there's room for a character, a turn, and a reason to keep watching, so I build each spot around a story people actually want to follow, not just a product on screen.</p>
+  </div>
+  <div style="padding:0 56px">
+    <div class="thumb" style="margin-bottom:16px"><iframe src="https://www.youtube.com/embed/MNLG_Ar2ujQ?rel=0&modestbranding=1&playsinline=1" allow="accelerometer; autoplay; encrypted-media; picture-in-picture" allowfullscreen title="TARS' First Day"></iframe></div>
+    <div style="display:flex;align-items:baseline;justify-content:space-between;border-bottom:1px solid rgba(34,33,33,.12);padding-bottom:20px;margin-bottom:24px">
+      <h2 style="font:800 44px Inter;letter-spacing:-1.5px;margin:0">&ldquo;TARS&rsquo; First Day&rdquo; | Hypercard Expense</h2>
+      <div style="font:700 11px ui-monospace,monospace">LATEST</div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px">
+      <div><div class="thumb"><img src="https://i.ytimg.com/vi/NQYnhVdDC2I/hqdefault.jpg" alt="BOTsession | LEMMA"></div><div class="cardtitle">BOTsession | LEMMA</div></div>
+      <div><div class="thumb"><img src="https://i.ytimg.com/vi/aIQLkbTeDBg/hqdefault.jpg" alt="A Little Nudge | Blinkko"></div><div class="cardtitle">&ldquo;A Little Nudge&rdquo; | Blinkko</div></div>
+      <div><div class="thumb"><img src="https://i.ytimg.com/vi/Opp97cZHprc/hqdefault.jpg" alt="Maruchan Instant Lunch"></div><div class="cardtitle">Maruchan Instant Lunch, Flamin&rsquo; Hot&reg; | Spot</div></div>
+      <div><div class="thumb"><img src="https://i.ytimg.com/vi/_Sr9eyDxCcM/hqdefault.jpg" alt="All the Time in the World | Truffle Pig"></div><div class="cardtitle">&ldquo;All the Time in the World&rdquo; | Truffle Pig</div></div>
+      <div><div class="thumb"><img src="https://i.ytimg.com/vi/QVqXPH-w6Zk/hqdefault.jpg" alt="Hot Nerd | Ditto AI"></div><div class="cardtitle">&ldquo;Hot Nerd&rdquo; | Ditto AI</div></div>
+      <div><div class="thumb"><img src="https://i.ytimg.com/vi/QQAs6t2i9LM/hqdefault.jpg" alt="Onitsuka Tiger Sublimity"></div><div class="cardtitle">Onitsuka Tiger &mdash; &ldquo;Find Your Pair&rdquo; | Sublimity</div></div>
+      <div><div class="thumb"><img src="https://i.ytimg.com/vi/FzzhmVvXbpA/hqdefault.jpg" alt="Onitsuka Tiger Raincheck"></div><div class="cardtitle">Onitsuka Tiger &mdash; &ldquo;Find Your Pair&rdquo; | Raincheck</div></div>
+      <div><div class="thumb"><img src="https://i.ytimg.com/vi/f2MCBnZUSPc/hqdefault.jpg" alt="Onitsuka Tiger Records"></div><div class="cardtitle">Onitsuka Tiger &mdash; &ldquo;Find Your Pair&rdquo; | Records</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. NARRATIVE ============ -->
+<div class="tag">NARRATIVE</div>
+<section style="padding-bottom:64px;border-top:1px solid rgba(34,33,33,.12)">
+  <div class="head">
+    <div class="mark">AG</div>
+    <nav class="nav"><a href="#">REEL</a><a href="#">COMMERCIAL</a><a href="#" class="on">NARRATIVE</a><a href="#">ACTING</a><a href="#">ABOUT</a></nav>
+  </div>
+  <div style="padding:32px 56px 40px;display:flex;align-items:flex-end;justify-content:space-between">
+    <h1 class="pagetitle" style="margin:0">NARRATIVE</h1>
+    <p class="blurb" style="margin:0">Short films and clips from short films.</p>
+  </div>
+  <div style="padding:0 56px">
+    <!-- row 1: newest, embedded. rows 2-6: thumbnail + title, hover tint -->
+    <div style="display:grid;grid-template-columns:340px 1fr 120px;align-items:center;gap:36px;padding:26px 0;border-top:1px solid rgba(34,33,33,.12)">
+      <div class="thumb"><iframe src="https://www.youtube.com/embed/R-of3WR9EVg?rel=0&modestbranding=1&playsinline=1" allow="accelerometer; autoplay; encrypted-media; picture-in-picture" allowfullscreen title="Veins"></iframe></div>
+      <div style="font:800 44px Inter;letter-spacing:-1.5px">Veins</div>
+      <div style="font:700 12px ui-monospace,monospace;text-align:right">LATEST</div>
+    </div>
+    <div style="display:grid;grid-template-columns:340px 1fr 120px;align-items:center;gap:36px;padding:26px 0;border-top:1px solid rgba(34,33,33,.12)">
+      <div class="thumb"><img src="https://i.ytimg.com/vi/7AV_8Ull09g/hqdefault.jpg" alt="USB"></div>
+      <div style="font:800 44px Inter;letter-spacing:-1.5px">USB</div>
+      <div style="font:700 12px ui-monospace,monospace;text-align:right">PLAY &#8594;</div>
+    </div>
+    <div style="display:grid;grid-template-columns:340px 1fr 120px;align-items:center;gap:36px;padding:26px 0;border-top:1px solid rgba(34,33,33,.12)">
+      <div class="thumb"><img src="https://i.ytimg.com/vi/XAHEjHXXmYo/hqdefault.jpg" alt="Criterion"></div>
+      <div style="font:800 44px Inter;letter-spacing:-1.5px">Criterion</div>
+      <div style="font:700 12px ui-monospace,monospace;text-align:right">PLAY &#8594;</div>
+    </div>
+    <div style="display:grid;grid-template-columns:340px 1fr 120px;align-items:center;gap:36px;padding:26px 0;border-top:1px solid rgba(34,33,33,.12)">
+      <div class="thumb"><img src="https://i.ytimg.com/vi/UratXCFXYGw/hqdefault.jpg" alt="OCFF"></div>
+      <div style="font:800 44px Inter;letter-spacing:-1.5px">OCFF</div>
+      <div style="font:700 12px ui-monospace,monospace;text-align:right">PLAY &#8594;</div>
+    </div>
+    <div style="display:grid;grid-template-columns:340px 1fr 120px;align-items:center;gap:36px;padding:26px 0;border-top:1px solid rgba(34,33,33,.12)">
+      <div class="thumb"><img src="https://i.ytimg.com/vi/tQun-GQBrXk/hqdefault.jpg" alt="Best of Three"></div>
+      <div style="font:800 44px Inter;letter-spacing:-1.5px">Best of Three</div>
+      <div style="font:700 12px ui-monospace,monospace;text-align:right">PLAY &#8594;</div>
+    </div>
+    <div style="display:grid;grid-template-columns:340px 1fr 120px;align-items:center;gap:36px;padding:26px 0;border-top:1px solid rgba(34,33,33,.12)">
+      <div class="thumb"><img src="https://i.ytimg.com/vi/aw1uku7Yz9c/hqdefault.jpg" alt="Free Ice Cream"></div>
+      <div style="font:800 44px Inter;letter-spacing:-1.5px">Free Ice Cream</div>
+      <div style="font:700 12px ui-monospace,monospace;text-align:right">PLAY &#8594;</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. ACTING (two reels) ============ -->
+<div class="tag">ACTING — TWO REELS</div>
+<section style="padding:0 56px 72px;border-top:1px solid rgba(34,33,33,.12)">
+  <div class="head" style="padding:40px 0">
+    <div class="mark">AG</div>
+    <nav class="nav"><a href="#">REEL</a><a href="#">COMMERCIAL</a><a href="#">NARRATIVE</a><a href="#" class="on">ACTING</a><a href="#">ABOUT</a></nav>
+  </div>
+  <h1 class="pagetitle" style="margin:0 0 28px">ACTING</h1>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+    <div>
+      <div class="thumb"><iframe src="https://www.youtube.com/embed/RT6Xv8AAvLk?rel=0&modestbranding=1&playsinline=1" allow="accelerometer; autoplay; encrypted-media; picture-in-picture" allowfullscreen title="Dramatic reel"></iframe></div>
+      <div style="display:flex;align-items:baseline;justify-content:space-between;margin-top:14px">
+        <div style="font:800 30px Inter;letter-spacing:-1px">Dramatic Reel</div>
+        <div style="font:700 11px ui-monospace,monospace">DRAMA</div>
+      </div>
+    </div>
+    <div>
+      <div class="thumb"><iframe src="https://www.youtube.com/embed/6DOFRy-SYH0?rel=0&modestbranding=1&playsinline=1" allow="accelerometer; autoplay; encrypted-media; picture-in-picture" allowfullscreen title="Comedic reel"></iframe></div>
+      <div style="display:flex;align-items:baseline;justify-content:space-between;margin-top:14px">
+        <div style="font:800 30px Inter;letter-spacing:-1px">Comedic Reel</div>
+        <div style="font:700 11px ui-monospace,monospace">COMEDY</div>
+      </div>
+    </div>
+  </div>
+  <div style="display:flex;gap:56px;padding-top:28px;border-top:1px solid rgba(34,33,33,.12);margin-top:28px">
+    <div><div style="font:700 10px Inter;letter-spacing:1.5px">REELS</div><div style="font:700 15px Inter">Dramatic + Comedic</div></div>
+    <div><div style="font:700 10px Inter;letter-spacing:1.5px">UPDATED</div><div style="font:700 15px Inter">2026</div></div>
+    <div><div style="font:700 10px Inter;letter-spacing:1.5px">UNION</div><div style="font:700 15px Inter">SAG-AFTRA eligible</div></div>
+    <div><div style="font:700 10px Inter;letter-spacing:1.5px">BASED</div><div style="font:700 15px Inter">Los Angeles</div></div>
+  </div>
+  <div style="display:grid;grid-template-columns:auto 1fr;gap:40px;margin-top:32px;padding-top:28px;border-top:1px solid rgba(34,33,33,.12)">
+    <div style="font:700 10px Inter;letter-spacing:1.5px;padding-top:4px">REPRESENTATION</div>
+    <div>
+      <div style="font:800 20px Inter;letter-spacing:-.4px">Daniel Hoff Agency</div>
+      <div style="font:600 13px/1.7 Inter;color:rgba(34,33,33,.7);margin-top:6px">5455 Wilshire Blvd, Ste 1100 &middot; Los Angeles, CA 90036 &middot; (323) 932-2500 &middot; danielhoffagency.com</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. ABOUT / CONTACT ============ -->
+<div class="tag">ABOUT / CONTACT</div>
+<section style="border-top:1px solid rgba(34,33,33,.12)">
+  <div class="head">
+    <div class="mark">AG</div>
+    <nav class="nav"><a href="#">REEL</a><a href="#">COMMERCIAL</a><a href="#">NARRATIVE</a><a href="#">ACTING</a><a href="#" class="on">ABOUT</a></nav>
+  </div>
+  <div style="padding:32px 56px 40px"><h1 class="pagetitle" style="margin:0">ABOUT</h1></div>
+  <div style="display:grid;grid-template-columns:420px 1fr;gap:64px;padding:0 56px 64px;align-items:start">
+    <div style="aspect-ratio:4/5;overflow:hidden;border:1px solid rgba(34,33,33,.2);background:#222121">
+      <img src="Alexander_Guo_Headshot_1.jpg" alt="Alexander Guo" style="width:100%;height:100%;object-fit:cover;object-position:50% 25%;display:block">
+    </div>
+    <div style="display:flex;flex-direction:column;gap:36px">
+      <h2 style="font:800 34px/1.25 Inter;letter-spacing:-1px;max-width:760px;margin:0">Alexander Guo is a Chinese American filmmaker and actor based in Los Angeles.</h2>
+      <div style="display:flex;flex-direction:column;gap:18px;max-width:680px">
+        <p style="font:600 15px/1.75 Inter;color:rgba(34,33,33,.75);margin:0">With a background in sketch comedy, his work blends awkward humor and sharp wit with grounded sincerity, often living between comedy and drama. As a storyteller, he is drawn to deeply human moments within larger-than-life worlds. Whether set in the past, a cyberpunk city, or a fantastical world, his work centers on emotional truths that ground spectacle in something real. His goal is to tell intimate stories on a cinematic scale, where the epic and the human are inseparable.</p>
+        <p style="font:600 15px/1.75 Inter;color:rgba(34,33,33,.75);margin:0">Alexander's work spans independent short films, national commercials, and VFX projects, including collaborations with Warner Bros., Netflix, and creators like Zach King. He has directed established talent such as Creed Bratton. He has acted in numerous short films and national commercials, including spots for Meta and Domino's, and is represented by the Daniel Hoff Agency.</p>
+        <p style="font:600 15px/1.75 Inter;color:rgba(34,33,33,.75);margin:0">Outside of filmmaking he trains at the gym and previously competed in boxing for the University of Southern California. He is currently leading his first independent feature film.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(2,auto);gap:28px 64px;justify-content:start;padding-top:28px;border-top:1px solid rgba(34,33,33,.12)">
+        <div><div style="font:700 10px Inter;letter-spacing:1.5px;color:rgba(34,33,33,.5)">EMAIL</div>
+          <a href="mailto:alextheguo@gmail.com" style="font:700 15px Inter;text-decoration:none;border-bottom:2px solid rgba(34,33,33,.35);width:fit-content;display:inline-block;margin-top:6px">alextheguo@gmail.com</a></div>
+        <div><div style="font:700 10px Inter;letter-spacing:1.5px;color:rgba(34,33,33,.5)">INSTAGRAM</div>
+          <a href="https://www.instagram.com/alextheguo/" target="_blank" rel="noopener" style="font:700 15px Inter;text-decoration:none;border-bottom:2px solid rgba(34,33,33,.35);width:fit-content;display:inline-block;margin-top:6px">@alextheguo</a></div>
+        <div><div style="font:700 10px Inter;letter-spacing:1.5px;color:rgba(34,33,33,.5)">BASED</div><div style="font:700 15px Inter;margin-top:6px">Los Angeles, CA</div></div>
+        <div><div style="font:700 10px Inter;letter-spacing:1.5px;color:rgba(34,33,33,.5)">REPRESENTATION</div>
+          <div style="font:700 15px Inter;margin-top:6px">Daniel Hoff Agency</div>
+          <div style="font:600 13px/1.6 Inter;color:rgba(34,33,33,.65)">5455 Wilshire Blvd, Ste 1100<br>Los Angeles, CA 90036<br>(323) 932-2500</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

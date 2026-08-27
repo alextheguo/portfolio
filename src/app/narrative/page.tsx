@@ -1,53 +1,39 @@
-import YouTubeEmbed from "@/components/YouTubeEmbed";
-
-const PROJECTS = [
-  { id: "7AV_8Ull09g", title: "USB", credits: "Director, Editor, VFX Artist" },
-  { id: "R-of3WR9EVg", title: "Veins", credits: "Writer, Director, Sound Designer, VFX Artist" },
-  {
-    id: "XAHEjHXXmYo",
-    title: "Criterion",
-    credits: "Writer, Director, Editor, VFX Artist",
-    note: "(Excerpt from a larger piece of work)",
-  },
-  {
-    id: "UratXCFXYGw",
-    title: "Orange County Film Festival Nomination Film",
-    credits: "Director, Editor, VFX Artist",
-  },
-  {
-    id: "tQun-GQBrXk",
-    title: "Best of Three",
-    credits: "Writer, Director, Lead Talent, Editor, VFX, Stunt Coordinator, Sound Design",
-  },
-  {
-    id: "aw1uku7Yz9c",
-    title: "Free Ice Cream",
-    credits: "Writer, Director, Producer, Editor, Sound, VFX",
-  },
-  { id: "UohfebzTJLs", title: "Dear Anxiety", credits: "Writer, Director, Editor, Sound" },
-];
+import Header from "@/components/Header";
+import ThumbPlayer from "@/components/ThumbPlayer";
+import { NARRATIVE } from "@/data/projects";
 
 export default function NarrativePage() {
   return (
-    <main className="flex flex-1 flex-col items-center px-6 py-12 sm:px-10">
-      <div className="w-full max-w-4xl flex flex-col gap-16">
-        {PROJECTS.map((project) => (
-          <div key={project.id}>
-            <YouTubeEmbed id={project.id} title={project.title} />
-            <h2 className="mt-4 font-[family-name:var(--font-display)] text-xl sm:text-2xl">
-              {project.title}
-            </h2>
-            <p className="mt-1 font-[family-name:var(--font-body)] text-xs uppercase tracking-[0.1em] opacity-70">
-              {project.credits}
-            </p>
-            {project.note && (
-              <p className="mt-1 font-[family-name:var(--font-body)] text-xs italic opacity-60">
-                {project.note}
-              </p>
-            )}
+    <div className="border-t border-[#222121]/12 pb-16">
+      <Header />
+
+      <div className="flex flex-col items-start justify-between gap-4 px-6 py-8 sm:flex-row sm:items-end sm:px-14 sm:py-8">
+        <h1 className="font-black leading-[0.85] tracking-[-2px] text-[clamp(48px,11vw,120px)] sm:tracking-[-5px]">
+          NARRATIVE
+        </h1>
+        <p className="max-w-[420px] text-sm font-semibold leading-[1.65] text-[#222121]/70 sm:text-right">
+          Short films and clips from short films.
+        </p>
+      </div>
+
+      <div className="px-6 sm:px-14">
+        {NARRATIVE.map((p, i) => (
+          <div
+            key={p.id}
+            className="grid grid-cols-[120px_1fr] items-center gap-4 border-t border-[#222121]/12 py-5 sm:grid-cols-[340px_1fr_120px] sm:gap-9 sm:py-[26px]"
+          >
+            <div className="col-span-2 sm:col-span-1">
+              <ThumbPlayer id={p.id} title={p.title} playing={i === 0} />
+            </div>
+            <div className="text-2xl font-extrabold tracking-[-1px] sm:text-[44px] sm:tracking-[-1.5px]">
+              {p.title}
+            </div>
+            <div className="hidden font-mono text-xs font-bold sm:block sm:text-right">
+              {i === 0 ? "LATEST" : "PLAY →"}
+            </div>
           </div>
         ))}
       </div>
-    </main>
+    </div>
   );
 }

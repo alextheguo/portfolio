@@ -1,32 +1,45 @@
-import YouTubeEmbed from "@/components/YouTubeEmbed";
-
-const PROJECTS = [
-  { id: "aIQLkbTeDBg", title: "“A Little Nudge” for Blinkko" },
-  { id: "MNLG_Ar2ujQ", title: "“TARS' First Day” — for Hypercard Expense" },
-  { id: "_Sr9eyDxCcM", title: "“All the Time in the World” — for Truffle Pig" },
-  { id: "QVqXPH-w6Zk", title: "“Hot Nerd” | Ditto AI" },
-  { id: "FzzhmVvXbpA", title: "Onitsuka Tiger — “Find Your Pair” | Raincheck" },
-  {
-    id: "Opp97cZHprc",
-    title: "Maruchan Instant Lunch Ramen Noodles, Flamin’ Hot® | Commercial Spot",
-  },
-  { id: "QQAs6t2i9LM", title: "Onitsuka Tiger — “Find Your Pair” | Sublimity" },
-  { id: "f2MCBnZUSPc", title: "Onitsuka Tiger — “Find Your Pair” | Records" },
-];
+import Header from "@/components/Header";
+import ThumbPlayer from "@/components/ThumbPlayer";
+import { COMMERCIAL } from "@/data/projects";
 
 export default function CommercialPage() {
+  const [latest, ...rest] = COMMERCIAL;
+
   return (
-    <main className="flex flex-1 flex-col items-center px-6 py-12 sm:px-10">
-      <div className="w-full max-w-4xl flex flex-col gap-16">
-        {PROJECTS.map((project) => (
-          <div key={project.id}>
-            <YouTubeEmbed id={project.id} title={project.title} />
-            <h2 className="mt-4 font-[family-name:var(--font-display)] text-lg sm:text-xl">
-              {project.title}
-            </h2>
-          </div>
-        ))}
+    <div className="border-t border-[#222121]/12 pb-16">
+      <Header />
+
+      <div className="flex flex-col items-start justify-between gap-4 px-6 py-8 sm:flex-row sm:items-end sm:px-14 sm:py-8">
+        <h1 className="font-black leading-[0.85] tracking-[-2px] text-[clamp(48px,11vw,120px)] sm:tracking-[-5px]">
+          COMMERCIAL
+        </h1>
+        <p className="max-w-[420px] text-sm font-semibold leading-[1.65] text-[#222121]/70 sm:text-right">
+          I treat every commercial like a short film. Even in thirty seconds there&apos;s room
+          for a character, a turn, and a reason to keep watching, so I build each spot around a
+          story people actually want to follow, not just a product on screen.
+        </p>
       </div>
-    </main>
+
+      <div className="px-6 sm:px-14">
+        <div className="mb-4">
+          <ThumbPlayer id={latest.id} title={latest.title} playing />
+        </div>
+        <div className="mb-6 flex items-baseline justify-between border-b border-[#222121]/12 pb-5">
+          <h2 className="text-2xl font-extrabold tracking-[-1px] sm:text-[44px] sm:tracking-[-1.5px]">
+            {latest.title}
+          </h2>
+          <div className="font-mono text-[11px] font-bold">LATEST</div>
+        </div>
+
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {rest.map((p) => (
+            <div key={p.id}>
+              <ThumbPlayer id={p.id} title={p.title} />
+              <div className="mt-3 text-[17px] font-extrabold tracking-[-0.5px]">{p.title}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
   );
 }
