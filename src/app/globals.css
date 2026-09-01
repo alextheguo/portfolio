@@ -19,15 +19,15 @@ body {
 
 @keyframes film-grain {
   0%, 100% { background-position: 0 0; }
-  10% { background-position: -60px 30px; }
-  20% { background-position: 45px -75px; }
-  30% { background-position: -105px 55px; }
-  40% { background-position: 80px 95px; }
-  50% { background-position: -35px -60px; }
-  60% { background-position: 120px 15px; }
-  70% { background-position: -80px -95px; }
-  80% { background-position: 60px -35px; }
-  90% { background-position: -20px 80px; }
+  10% { background-position: -110px 55px; }
+  20% { background-position: 85px -140px; }
+  30% { background-position: -195px 100px; }
+  40% { background-position: 150px 180px; }
+  50% { background-position: -65px -115px; }
+  60% { background-position: 225px 30px; }
+  70% { background-position: -150px -180px; }
+  80% { background-position: 115px -65px; }
+  90% { background-position: -35px 150px; }
 }
 
 .animate-film-grain {
