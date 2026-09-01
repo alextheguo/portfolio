@@ -14,20 +14,14 @@ export default function ActingPage() {
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
         <div>
           <YouTubeEmbed id={ACTING.dramatic.id} title={ACTING.dramatic.title} />
-          <div className="mt-3.5 flex items-baseline justify-between">
-            <div className="text-xl font-extrabold tracking-[-0.5px] sm:text-[30px] sm:tracking-[-1px]">
-              {ACTING.dramatic.title}
-            </div>
-            <div className="font-mono text-[11px] font-bold">{ACTING.dramatic.meta}</div>
+          <div className="mt-3.5 text-xl font-extrabold tracking-[-0.5px] sm:text-[30px] sm:tracking-[-1px]">
+            {ACTING.dramatic.title}
           </div>
         </div>
         <div>
           <YouTubeEmbed id={ACTING.comedic.id} title={ACTING.comedic.title} />
-          <div className="mt-3.5 flex items-baseline justify-between">
-            <div className="text-xl font-extrabold tracking-[-0.5px] sm:text-[30px] sm:tracking-[-1px]">
-              {ACTING.comedic.title}
-            </div>
-            <div className="font-mono text-[11px] font-bold">{ACTING.comedic.meta}</div>
+          <div className="mt-3.5 text-xl font-extrabold tracking-[-0.5px] sm:text-[30px] sm:tracking-[-1px]">
+            {ACTING.comedic.title}
           </div>
         </div>
       </div>

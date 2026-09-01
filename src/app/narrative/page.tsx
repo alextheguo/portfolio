@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import ThumbPlayer from "@/components/ThumbPlayer";
 import VideoThumb from "@/components/VideoThumb";
+import PlayLabel from "@/components/PlayLabel";
 import { NARRATIVE } from "@/data/projects";
 
 export default function NarrativePage() {
@@ -33,8 +34,12 @@ export default function NarrativePage() {
             <div className="text-2xl font-extrabold tracking-[-1px] sm:text-[44px] sm:tracking-[-1.5px]">
               {p.title}
             </div>
-            <div className="hidden font-mono text-xs font-bold sm:block sm:text-right">
-              {i === 0 ? "LATEST" : "PLAY →"}
+            <div className="hidden sm:block sm:text-right">
+              {i === 0 ? (
+                <span className="font-mono text-xs font-bold">LATEST</span>
+              ) : (
+                <PlayLabel id={p.id} title={p.title} />
+              )}
             </div>
           </div>
         ))}
