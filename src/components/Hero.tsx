@@ -3,12 +3,13 @@
 import { useEffect, useRef, useState } from "react";
 import Header from "@/components/Header";
 import DustParticles from "@/components/DustParticles";
+import { useVideoLightbox } from "@/components/VideoLightboxProvider";
 import { HOME_REEL_ID } from "@/data/projects";
 
 const VIDEO_RATIO = 16 / 9;
 
 export default function Hero() {
-  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const { openVideo } = useVideoLightbox();
   const containerRef = useRef<HTMLDivElement>(null);
   const [videoSize, setVideoSize] = useState({ width: 0, height: 0 });
 
@@ -32,21 +33,6 @@ export default function Hero() {
     observer.observe(el);
     return () => observer.disconnect();
   }, []);
-
-  useEffect(() => {
-    if (!lightboxOpen) return;
-
-    document.body.style.overflow = "hidden";
-    const onKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setLightboxOpen(false);
-    };
-    window.addEventListener("keydown", onKeyDown);
-
-    return () => {
-      document.body.style.overflow = "";
-      window.removeEventListener("keydown", onKeyDown);
-    };
-  }, [lightboxOpen]);
 
   const backgroundSrc = `https://www.youtube.com/embed/${HOME_REEL_ID}?autoplay=1&mute=1&loop=1&playlist=${HOME_REEL_ID}&controls=0&modestbranding=1&rel=0&playsinline=1`;
 
@@ -104,7 +90,7 @@ export default function Hero() {
       <div className="relative z-10 flex items-center justify-between px-6 py-6 sm:px-14 sm:py-10">
         <button
           type="button"
-          onClick={() => setLightboxOpen(true)}
+          onClick={() => openVideo(HOME_REEL_ID, "Alexander Guo 2026 Director Reel")}
           className="flex items-center gap-4 text-left"
         >
           <span className="flex h-[52px] w-[52px] shrink-0 items-center justify-center rounded-full bg-[#222121] text-[#ffd964]">
@@ -118,34 +104,6 @@ export default function Hero() {
           SCROLL FOR SELECTED WORK ↓
         </div>
       </div>
-
-      {lightboxOpen && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 sm:p-10"
-          onClick={() => setLightboxOpen(false)}
-        >
-          <button
-            type="button"
-            onClick={() => setLightboxOpen(false)}
-            aria-label="Close"
-            className="absolute top-5 right-5 flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-2xl leading-none text-white transition-colors hover:bg-white/20 sm:top-8 sm:right-8"
-          >
-            ×
-          </button>
-          <div
-            className="aspect-video w-full max-w-5xl"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <iframe
-              src={`https://www.youtube.com/embed/${HOME_REEL_ID}?autoplay=1&controls=1&rel=0&modestbranding=1&playsinline=1`}
-              className="h-full w-full border-0"
-              allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
-              allowFullScreen
-              title="Alexander Guo 2026 Director Reel"
-            />
-          </div>
-        </div>
-      )}
     </section>
   );
 }

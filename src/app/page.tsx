@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Hero from "@/components/Hero";
-import Thumb from "@/components/Thumb";
-import { ACTING, COMMERCIAL, NARRATIVE, youtubeThumb } from "@/data/projects";
+import VideoThumb from "@/components/VideoThumb";
+import { ACTING, COMMERCIAL, NARRATIVE } from "@/data/projects";
 
 export default function Home() {
   const commercialFeatured = COMMERCIAL.slice(0, 3);
@@ -25,16 +25,10 @@ export default function Home() {
         </div>
         <div className="mb-[52px] grid grid-cols-1 gap-5 sm:grid-cols-3">
           {commercialFeatured.map((p) => (
-            <Link href="/commercial" key={p.id} className="block">
-              <div className="aspect-video overflow-hidden border border-[#222121]/20 bg-[#222121]">
-                <Thumb
-                  src={youtubeThumb(p.id)}
-                  alt={p.title}
-                  className="h-full w-full object-cover"
-                />
-              </div>
+            <div key={p.id}>
+              <VideoThumb id={p.id} title={p.title} />
               <div className="mt-3 text-xl font-extrabold tracking-[-0.5px]">{p.title}</div>
-            </Link>
+            </div>
           ))}
         </div>
 
@@ -51,16 +45,10 @@ export default function Home() {
         </div>
         <div className="mb-[52px] grid grid-cols-1 gap-5 sm:grid-cols-3">
           {narrativeFeatured.map((p) => (
-            <Link href="/narrative" key={p.id} className="block">
-              <div className="aspect-video overflow-hidden border border-[#222121]/20 bg-[#222121]">
-                <Thumb
-                  src={youtubeThumb(p.id)}
-                  alt={p.title}
-                  className="h-full w-full object-cover"
-                />
-              </div>
+            <div key={p.id}>
+              <VideoThumb id={p.id} title={p.title} />
               <div className="mt-3 text-xl font-extrabold tracking-[-0.5px]">{p.title}</div>
-            </Link>
+            </div>
           ))}
         </div>
 
@@ -75,30 +63,18 @@ export default function Home() {
             </Link>
           </div>
           <div className="grid grid-cols-2 gap-4">
-            <Link href="/acting" className="block">
-              <div className="aspect-video overflow-hidden border border-[#222121]/20 bg-[#222121]">
-                <Thumb
-                  src={youtubeThumb(ACTING.dramatic.id)}
-                  alt={ACTING.dramatic.title}
-                  className="h-full w-full object-cover"
-                />
-              </div>
+            <div>
+              <VideoThumb id={ACTING.dramatic.id} title={ACTING.dramatic.title} />
               <div className="mt-3 text-lg font-extrabold tracking-[-0.5px]">
                 {ACTING.dramatic.title}
               </div>
-            </Link>
-            <Link href="/acting" className="block">
-              <div className="aspect-video overflow-hidden border border-[#222121]/20 bg-[#222121]">
-                <Thumb
-                  src={youtubeThumb(ACTING.comedic.id)}
-                  alt={ACTING.comedic.title}
-                  className="h-full w-full object-cover"
-                />
-              </div>
+            </div>
+            <div>
+              <VideoThumb id={ACTING.comedic.id} title={ACTING.comedic.title} />
               <div className="mt-3 text-lg font-extrabold tracking-[-0.5px]">
                 {ACTING.comedic.title}
               </div>
-            </Link>
+            </div>
           </div>
         </div>
       </section>

@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import ThumbPlayer from "@/components/ThumbPlayer";
+import VideoThumb from "@/components/VideoThumb";
 import { COMMERCIAL } from "@/data/projects";
 
 export default function CommercialPage() {
@@ -34,7 +35,7 @@ export default function CommercialPage() {
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {rest.map((p) => (
             <div key={p.id}>
-              <ThumbPlayer id={p.id} title={p.title} />
+              <VideoThumb id={p.id} title={p.title} />
               <div className="mt-3 text-[17px] font-extrabold tracking-[-0.5px]">{p.title}</div>
             </div>
           ))}
