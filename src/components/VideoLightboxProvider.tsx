@@ -2,10 +2,10 @@
 
 import { createContext, useCallback, useContext, useEffect, useState } from "react";
 
-type LightboxState = { id: string; title: string } | null;
+type LightboxVideo = { src: string; title: string; type: "youtube" | "local" };
 
 const VideoLightboxContext = createContext<{
-  openVideo: (id: string, title: string) => void;
+  openVideo: (video: LightboxVideo) => void;
 } | null>(null);
 
 export function useVideoLightbox() {
@@ -15,9 +15,9 @@ export function useVideoLightbox() {
 }
 
 export default function VideoLightboxProvider({ children }: { children: React.ReactNode }) {
-  const [video, setVideo] = useState<LightboxState>(null);
+  const [video, setVideo] = useState<LightboxVideo | null>(null);
 
-  const openVideo = useCallback((id: string, title: string) => setVideo({ id, title }), []);
+  const openVideo = useCallback((v: LightboxVideo) => setVideo(v), []);
   const closeVideo = useCallback(() => setVideo(null), []);
 
   useEffect(() => {
@@ -52,13 +52,24 @@ export default function VideoLightboxProvider({ children }: { children: React.Re
             ×
           </button>
           <div className="aspect-video w-full max-w-5xl" onClick={(e) => e.stopPropagation()}>
-            <iframe
-              src={`https://www.youtube.com/embed/${video.id}?autoplay=1&controls=1&rel=0&modestbranding=1&playsinline=1`}
-              className="h-full w-full border-0"
-              allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
-              allowFullScreen
-              title={video.title}
-            />
+            {video.type === "local" ? (
+              <video
+                src={video.src}
+                className="h-full w-full bg-black"
+                controls
+                autoPlay
+                playsInline
+                title={video.title}
+              />
+            ) : (
+              <iframe
+                src={`https://www.youtube.com/embed/${video.src}?autoplay=1&controls=1&rel=0&modestbranding=1&playsinline=1`}
+                className="h-full w-full border-0"
+                allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
+                allowFullScreen
+                title={video.title}
+              />
+            )}
           </div>
         </div>
       )}

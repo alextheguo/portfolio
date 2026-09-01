@@ -17,7 +17,7 @@ export default function VideoThumb({
   return (
     <button
       type="button"
-      onClick={() => openVideo(id, title)}
+      onClick={() => openVideo({ src: id, title, type: "youtube" })}
       aria-label={`Play ${title}`}
       className={`relative block aspect-video w-full overflow-hidden border border-[#222121]/20 bg-[#222121] ${className ?? ""}`}
     >

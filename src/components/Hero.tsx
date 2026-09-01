@@ -1,60 +1,25 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
 import Header from "@/components/Header";
 import DustParticles from "@/components/DustParticles";
 import { useVideoLightbox } from "@/components/VideoLightboxProvider";
-import { HOME_REEL_ID } from "@/data/projects";
 
-const VIDEO_RATIO = 16 / 9;
+const HERO_VIDEO_SRC = "/hero-reel.mp4";
 
 export default function Hero() {
   const { openVideo } = useVideoLightbox();
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [videoSize, setVideoSize] = useState({ width: 0, height: 0 });
-
-  useEffect(() => {
-    const el = containerRef.current;
-    if (!el) return;
-
-    const updateSize = () => {
-      const { width: cw, height: ch } = el.getBoundingClientRect();
-      if (!cw || !ch) return;
-      const containerRatio = cw / ch;
-      if (containerRatio > VIDEO_RATIO) {
-        setVideoSize({ width: cw, height: cw / VIDEO_RATIO });
-      } else {
-        setVideoSize({ width: ch * VIDEO_RATIO, height: ch });
-      }
-    };
-
-    updateSize();
-    const observer = new ResizeObserver(updateSize);
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-
-  const backgroundSrc = `https://www.youtube.com/embed/${HOME_REEL_ID}?autoplay=1&mute=1&loop=1&playlist=${HOME_REEL_ID}&controls=0&modestbranding=1&rel=0&playsinline=1`;
 
   return (
     <section className="relative flex h-[900px] max-h-[100vh] flex-col overflow-hidden">
-      <div ref={containerRef} className="absolute inset-0 overflow-hidden">
-        {videoSize.width > 0 && (
-          <iframe
-            src={backgroundSrc}
-            className="absolute top-1/2 left-1/2 border-0"
-            style={{
-              width: videoSize.width,
-              height: videoSize.height,
-              transform: "translate(-50%, -50%) scale(1.1)",
-              filter: "blur(7px)",
-              pointerEvents: "none",
-            }}
-            allow="autoplay; encrypted-media"
-            title="Directing reel (background)"
-          />
-        )}
-      </div>
+      <video
+        className="absolute inset-0 h-full w-full object-cover"
+        style={{ filter: "blur(7px)", transform: "scale(1.05)" }}
+        src={HERO_VIDEO_SRC}
+        autoPlay
+        muted
+        loop
+        playsInline
+      />
       <div
         className="absolute inset-0"
         style={{
@@ -90,7 +55,13 @@ export default function Hero() {
       <div className="relative z-10 flex items-center justify-between px-6 py-6 sm:px-14 sm:py-10">
         <button
           type="button"
-          onClick={() => openVideo(HOME_REEL_ID, "Alexander Guo 2026 Director Reel")}
+          onClick={() =>
+            openVideo({
+              src: HERO_VIDEO_SRC,
+              title: "Alexander Guo 2026 Director Reel",
+              type: "local",
+            })
+          }
           className="flex items-center gap-4 text-left"
         >
           <span className="flex h-[52px] w-[52px] shrink-0 items-center justify-center rounded-full bg-[#222121] text-[#ffd964]">

@@ -8,7 +8,7 @@ export default function PlayLabel({ id, title }: { id: string; title: string }) 
   return (
     <button
       type="button"
-      onClick={() => openVideo(id, title)}
+      onClick={() => openVideo({ src: id, title, type: "youtube" })}
       className="font-mono text-xs font-bold hover:opacity-70 sm:text-right"
     >
       PLAY →
