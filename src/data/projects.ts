@@ -1,3 +1,5 @@
+import type { SyntheticEvent } from "react";
+
 export type Project = {
   id: string;
   title: string;
@@ -34,5 +36,16 @@ export const ACTING = {
 export const HOME_REEL_ID = "vpCQx8PgZYM";
 
 export function youtubeThumb(id: string) {
-  return `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
+  return `https://i.ytimg.com/vi/${id}/maxresdefault.jpg`;
+}
+
+// maxresdefault isn't generated for every upload; fall back to the
+// next-best size YouTube always has if it 404s.
+export function handleThumbFallback(e: SyntheticEvent<HTMLImageElement>) {
+  const img = e.currentTarget;
+  if (img.src.includes("maxresdefault")) {
+    img.src = img.src.replace("maxresdefault", "sddefault");
+  } else if (img.src.includes("sddefault")) {
+    img.src = img.src.replace("sddefault", "hqdefault");
+  }
 }

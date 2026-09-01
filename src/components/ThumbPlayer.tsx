@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { youtubeThumb } from "@/data/projects";
+import { youtubeThumb, handleThumbFallback } from "@/data/projects";
 
 export default function ThumbPlayer({
   id,
@@ -41,6 +41,7 @@ export default function ThumbPlayer({
       <img
         src={youtubeThumb(id)}
         alt={title}
+        onError={handleThumbFallback}
         className="absolute inset-0 h-full w-full object-cover"
       />
     </button>

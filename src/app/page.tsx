@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Hero from "@/components/Hero";
+import Thumb from "@/components/Thumb";
 import { ACTING, COMMERCIAL, NARRATIVE, youtubeThumb } from "@/data/projects";
 
 export default function Home() {
@@ -26,7 +27,11 @@ export default function Home() {
           {commercialFeatured.map((p) => (
             <Link href="/commercial" key={p.id} className="block">
               <div className="aspect-video overflow-hidden border border-[#222121]/20 bg-[#222121]">
-                <img src={youtubeThumb(p.id)} alt={p.title} className="h-full w-full object-cover" />
+                <Thumb
+                  src={youtubeThumb(p.id)}
+                  alt={p.title}
+                  className="h-full w-full object-cover"
+                />
               </div>
               <div className="mt-3 text-xl font-extrabold tracking-[-0.5px]">{p.title}</div>
             </Link>
@@ -48,7 +53,11 @@ export default function Home() {
           {narrativeFeatured.map((p) => (
             <Link href="/narrative" key={p.id} className="block">
               <div className="aspect-video overflow-hidden border border-[#222121]/20 bg-[#222121]">
-                <img src={youtubeThumb(p.id)} alt={p.title} className="h-full w-full object-cover" />
+                <Thumb
+                  src={youtubeThumb(p.id)}
+                  alt={p.title}
+                  className="h-full w-full object-cover"
+                />
               </div>
               <div className="mt-3 text-xl font-extrabold tracking-[-0.5px]">{p.title}</div>
             </Link>
@@ -68,7 +77,7 @@ export default function Home() {
           <div className="grid grid-cols-2 gap-4">
             <Link href="/acting" className="block">
               <div className="aspect-video overflow-hidden border border-[#222121]/20 bg-[#222121]">
-                <img
+                <Thumb
                   src={youtubeThumb(ACTING.dramatic.id)}
                   alt={ACTING.dramatic.title}
                   className="h-full w-full object-cover"
@@ -80,7 +89,7 @@ export default function Home() {
             </Link>
             <Link href="/acting" className="block">
               <div className="aspect-video overflow-hidden border border-[#222121]/20 bg-[#222121]">
-                <img
+                <Thumb
                   src={youtubeThumb(ACTING.comedic.id)}
                   alt={ACTING.comedic.title}
                   className="h-full w-full object-cover"

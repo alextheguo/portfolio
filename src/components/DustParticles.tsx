@@ -18,6 +18,10 @@ export default function DustParticles() {
   const [particles, setParticles] = useState<Particle[]>([]);
 
   useEffect(() => {
+    // Randomized client-only, deliberately: matching server/client output
+    // exactly would require picking these values before we know the client
+    // is real, so they're generated after mount instead.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setParticles(
       Array.from({ length: COUNT }, (_, id) => ({
         id,
