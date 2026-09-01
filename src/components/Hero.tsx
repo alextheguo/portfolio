@@ -13,7 +13,7 @@ export default function Hero() {
     <section className="relative flex h-[900px] max-h-[100vh] flex-col overflow-hidden">
       <video
         className="absolute inset-0 h-full w-full object-cover"
-        style={{ filter: "blur(7px)", transform: "scale(1.05)" }}
+        style={{ filter: "blur(2px)", transform: "scale(1.02)" }}
         src={HERO_VIDEO_SRC}
         autoPlay
         muted
@@ -25,14 +25,6 @@ export default function Hero() {
         style={{
           background:
             "linear-gradient(180deg, rgba(255,217,100,.6) 0%, rgba(255,217,100,.4) 45%, rgba(255,217,100,.95) 100%)",
-        }}
-      />
-      <div
-        className="animate-film-grain pointer-events-none absolute inset-0 opacity-[0.28] mix-blend-overlay"
-        style={{
-          backgroundImage:
-            "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.35' numOctaves='2' stitchTiles='stitch' result='t'/%3E%3CfeColorMatrix in='t' type='saturate' values='0' result='g'/%3E%3CfeComponentTransfer in='g'%3E%3CfeFuncR type='linear' slope='2.2' intercept='-0.6'/%3E%3CfeFuncG type='linear' slope='2.2' intercept='-0.6'/%3E%3CfeFuncB type='linear' slope='2.2' intercept='-0.6'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
-          backgroundSize: "340px 340px",
         }}
       />
       <DustParticles />
