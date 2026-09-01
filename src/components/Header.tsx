@@ -22,7 +22,7 @@ export default function Header({ padded = true }: { padded?: boolean }) {
       }`}
     >
       <Link href="/" className="block shrink-0">
-        <Image src="/logo-mark.png" alt="Alexander Guo" width={30} height={30} priority />
+        <Image src="/logo-mark.png" alt="Alexander Guo" width={44} height={44} priority />
       </Link>
       <nav className="flex gap-5 sm:gap-9">
         {NAV_LINKS.map((link) => {
