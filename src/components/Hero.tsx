@@ -46,7 +46,8 @@ export default function Hero() {
             style={{
               width: videoSize.width,
               height: videoSize.height,
-              transform: "translate(-50%, -50%)",
+              transform: "translate(-50%, -50%) scale(1.1)",
+              filter: withSound ? "none" : "blur(7px)",
               pointerEvents: withSound ? "auto" : "none",
             }}
             allow="autoplay; encrypted-media"
@@ -58,9 +59,18 @@ export default function Hero() {
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(180deg, rgba(255,217,100,.55) 0%, rgba(255,217,100,.15) 45%, rgba(255,217,100,.94) 100%)",
+            "linear-gradient(180deg, rgba(255,217,100,.6) 0%, rgba(255,217,100,.4) 45%, rgba(255,217,100,.95) 100%)",
         }}
       />
+      {!withSound && (
+        <div
+          className="pointer-events-none absolute inset-0 opacity-[0.18] mix-blend-overlay"
+          style={{
+            backgroundImage:
+              "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
+          }}
+        />
+      )}
 
       <Header />
 
