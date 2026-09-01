@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -20,8 +21,8 @@ export default function Header({ padded = true }: { padded?: boolean }) {
         padded ? "px-6 py-8 sm:px-14 sm:py-10" : "py-8 sm:py-10"
       }`}
     >
-      <Link href="/" className="font-black text-[15px] tracking-[1px]">
-        AG
+      <Link href="/" className="block shrink-0">
+        <Image src="/logo-mark.png" alt="Alexander Guo" width={30} height={30} priority />
       </Link>
       <nav className="flex gap-5 sm:gap-9">
         {NAV_LINKS.map((link) => {
