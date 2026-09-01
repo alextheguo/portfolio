@@ -16,3 +16,20 @@ body {
   color: var(--foreground);
   font-family: var(--font-inter), sans-serif;
 }
+
+@keyframes film-grain {
+  0%, 100% { background-position: 0 0; }
+  10% { background-position: -60px 30px; }
+  20% { background-position: 45px -75px; }
+  30% { background-position: -105px 55px; }
+  40% { background-position: 80px 95px; }
+  50% { background-position: -35px -60px; }
+  60% { background-position: 120px 15px; }
+  70% { background-position: -80px -95px; }
+  80% { background-position: 60px -35px; }
+  90% { background-position: -20px 80px; }
+}
+
+.animate-film-grain {
+  animation: film-grain 0.5s steps(1, end) infinite;
+}
