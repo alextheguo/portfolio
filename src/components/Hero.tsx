@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Header from "@/components/Header";
+import DustParticles from "@/components/DustParticles";
 import { HOME_REEL_ID } from "@/data/projects";
 
 const VIDEO_RATIO = 16 / 9;
@@ -72,6 +73,7 @@ export default function Hero() {
           }}
         />
       )}
+      {!withSound && <DustParticles />}
 
       <Header />
 
