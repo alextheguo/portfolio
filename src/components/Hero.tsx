@@ -1,11 +1,36 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Header from "@/components/Header";
 import { HOME_REEL_ID } from "@/data/projects";
 
+const VIDEO_RATIO = 16 / 9;
+
 export default function Hero() {
   const [withSound, setWithSound] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [videoSize, setVideoSize] = useState({ width: 0, height: 0 });
+
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+
+    const updateSize = () => {
+      const { width: cw, height: ch } = el.getBoundingClientRect();
+      if (!cw || !ch) return;
+      const containerRatio = cw / ch;
+      if (containerRatio > VIDEO_RATIO) {
+        setVideoSize({ width: cw, height: cw / VIDEO_RATIO });
+      } else {
+        setVideoSize({ width: ch * VIDEO_RATIO, height: ch });
+      }
+    };
+
+    updateSize();
+    const observer = new ResizeObserver(updateSize);
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   const src = withSound
     ? `https://www.youtube.com/embed/${HOME_REEL_ID}?autoplay=1&controls=1&rel=0&modestbranding=1&playsinline=1`
@@ -13,16 +38,21 @@ export default function Hero() {
 
   return (
     <section className="relative flex h-[900px] max-h-[100vh] flex-col overflow-hidden">
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 aspect-video h-full min-h-full w-auto min-w-full -translate-x-1/2 -translate-y-1/2">
+      <div ref={containerRef} className="absolute inset-0 overflow-hidden">
+        {videoSize.width > 0 && (
           <iframe
             src={src}
-            className="block h-full w-full border-0"
-            style={{ pointerEvents: withSound ? "auto" : "none" }}
+            className="absolute top-1/2 left-1/2 border-0"
+            style={{
+              width: videoSize.width,
+              height: videoSize.height,
+              transform: "translate(-50%, -50%)",
+              pointerEvents: withSound ? "auto" : "none",
+            }}
             allow="autoplay; encrypted-media"
             title="Directing reel"
           />
-        </div>
+        )}
       </div>
       <div
         className="absolute inset-0"
