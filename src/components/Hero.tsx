@@ -57,7 +57,16 @@ export default function Hero() {
           className="flex items-center gap-4 text-left"
         >
           <span className="flex h-[52px] w-[52px] shrink-0 items-center justify-center rounded-full bg-[#222121] text-[#ffd964]">
-            <span className="text-[13px] font-black">▶</span>
+            <svg
+              width="14"
+              height="16"
+              viewBox="0 0 14 16"
+              fill="currentColor"
+              className="ml-0.5"
+              aria-hidden="true"
+            >
+              <path d="M0 0L14 8L0 16V0Z" />
+            </svg>
           </span>
           <span className="text-xs font-bold tracking-[2px] text-[#222121]/70">
             PLAY REEL WITH SOUND
