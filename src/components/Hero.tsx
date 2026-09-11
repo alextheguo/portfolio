@@ -3,6 +3,7 @@
 import Header from "@/components/Header";
 import DustParticles from "@/components/DustParticles";
 import { useVideoLightbox } from "@/components/VideoLightboxProvider";
+import { HOME_REEL_ID } from "@/data/projects";
 
 const HERO_VIDEO_SRC = "/hero-reel.mp4";
 
@@ -49,9 +50,9 @@ export default function Hero() {
           type="button"
           onClick={() =>
             openVideo({
-              src: HERO_VIDEO_SRC,
+              src: HOME_REEL_ID,
               title: "Alexander Guo 2026 Director Reel",
-              type: "local",
+              type: "youtube",
             })
           }
           className="flex items-center gap-4 text-left"
