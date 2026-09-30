@@ -1,6 +1,12 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Footer() {
+  const pathname = usePathname();
+  if (pathname?.startsWith("/concept-editorial")) return null;
+
   return (
     <footer className="flex flex-col items-start justify-between gap-4 border-t border-[#222121]/12 px-6 py-8 sm:flex-row sm:items-center sm:px-14">
       <p className="text-xs font-semibold text-[#222121]/70">

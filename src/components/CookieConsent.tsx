@@ -1,11 +1,13 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const STORAGE_KEY = "cookie-consent";
 
 export default function CookieConsent() {
+  const pathname = usePathname();
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -30,7 +32,7 @@ export default function CookieConsent() {
     setVisible(false);
   }
 
-  if (!visible) return null;
+  if (!visible || pathname?.startsWith("/concept-editorial")) return null;
 
   return (
     <div className="fixed inset-x-0 bottom-0 z-40 flex flex-col items-start gap-4 border-t border-[#222121]/12 bg-[#ffd964] px-6 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-14">
