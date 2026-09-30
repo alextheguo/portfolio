@@ -1,8 +1,16 @@
+import type { Metadata } from "next";
 import Header from "@/components/Header";
 import ThumbPlayer from "@/components/ThumbPlayer";
 import VideoThumb from "@/components/VideoThumb";
 import PlayLabel from "@/components/PlayLabel";
 import { NARRATIVE } from "@/data/projects";
+
+export const metadata: Metadata = {
+  title: "Narrative | Alexander Guo",
+  description:
+    "Short films and narrative work directed by Alexander Guo, including Veins, USB, Criterion, and Best of Three.",
+  alternates: { canonical: "/narrative" },
+};
 
 export default function NarrativePage() {
   return (

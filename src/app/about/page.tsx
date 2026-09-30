@@ -1,4 +1,12 @@
+import type { Metadata } from "next";
 import Header from "@/components/Header";
+
+export const metadata: Metadata = {
+  title: "About | Alexander Guo",
+  description:
+    "Alexander Guo is a Chinese American filmmaker and actor based in Los Angeles, working across independent film, national commercials, and VFX.",
+  alternates: { canonical: "/about" },
+};
 
 export default function AboutPage() {
   return (
@@ -51,7 +59,7 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-2 gap-x-16 gap-y-7 justify-start border-t border-[#222121]/12 pt-7 sm:w-fit">
             <div>
-              <div className="text-[10px] font-bold tracking-[1.5px] text-[#222121]/50">
+              <div className="text-[10px] font-bold tracking-[1.5px] text-[#222121]/70">
                 EMAIL
               </div>
               <a
@@ -62,7 +70,7 @@ export default function AboutPage() {
               </a>
             </div>
             <div>
-              <div className="text-[10px] font-bold tracking-[1.5px] text-[#222121]/50">
+              <div className="text-[10px] font-bold tracking-[1.5px] text-[#222121]/70">
                 INSTAGRAM
               </div>
               <a
@@ -75,17 +83,17 @@ export default function AboutPage() {
               </a>
             </div>
             <div>
-              <div className="text-[10px] font-bold tracking-[1.5px] text-[#222121]/50">
+              <div className="text-[10px] font-bold tracking-[1.5px] text-[#222121]/70">
                 BASED
               </div>
               <div className="mt-1.5 text-[15px] font-bold">Los Angeles, CA</div>
             </div>
             <div>
-              <div className="text-[10px] font-bold tracking-[1.5px] text-[#222121]/50">
+              <div className="text-[10px] font-bold tracking-[1.5px] text-[#222121]/70">
                 REPRESENTATION
               </div>
               <div className="mt-1.5 text-[15px] font-bold">Daniel Hoff Agency</div>
-              <div className="text-[13px] leading-[1.6] font-semibold text-[#222121]/65">
+              <div className="text-[13px] leading-[1.6] font-semibold text-[#222121]/75">
                 5455 Wilshire Blvd, Ste 1100
                 <br />
                 Los Angeles, CA 90036

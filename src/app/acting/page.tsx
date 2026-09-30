@@ -1,6 +1,14 @@
+import type { Metadata } from "next";
 import Header from "@/components/Header";
 import YouTubeEmbed from "@/components/YouTubeEmbed";
 import { ACTING } from "@/data/projects";
+
+export const metadata: Metadata = {
+  title: "Acting | Alexander Guo",
+  description:
+    "Dramatic and comedic acting reels for Alexander Guo, represented by the Daniel Hoff Agency.",
+  alternates: { canonical: "/acting" },
+};
 
 export default function ActingPage() {
   return (

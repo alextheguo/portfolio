@@ -1,7 +1,15 @@
+import type { Metadata } from "next";
 import Header from "@/components/Header";
 import ThumbPlayer from "@/components/ThumbPlayer";
 import VideoThumb from "@/components/VideoThumb";
 import { COMMERCIAL } from "@/data/projects";
+
+export const metadata: Metadata = {
+  title: "Commercial | Alexander Guo",
+  description:
+    "Commercial directing work from Alexander Guo, including spots for Onitsuka Tiger, Maruchan, Hypercard Expense, and more.",
+  alternates: { canonical: "/commercial" },
+};
 
 export default function CommercialPage() {
   const [latest, ...rest] = COMMERCIAL;

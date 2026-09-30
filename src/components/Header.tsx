@@ -38,7 +38,7 @@ export default function Header({ padded = true }: { padded?: boolean }) {
                 className={`text-xs font-bold tracking-[1.5px] transition-colors duration-150 hover:text-[#222121] ${
                   active
                     ? "text-[#222121] border-b-2 border-[#222121] pb-[3px]"
-                    : "text-[#222121]/60"
+                    : "text-[#222121]/70"
                 }`}
               >
                 {link.label}
@@ -77,7 +77,7 @@ export default function Header({ padded = true }: { padded?: boolean }) {
                 href={link.href}
                 onClick={() => setOpen(false)}
                 className={`py-2.5 text-sm font-bold tracking-[1.5px] ${
-                  active ? "text-[#222121]" : "text-[#222121]/60"
+                  active ? "text-[#222121]" : "text-[#222121]/70"
                 }`}
               >
                 {link.label}

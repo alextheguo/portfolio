@@ -1,7 +1,15 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Hero from "@/components/Hero";
 import VideoThumb from "@/components/VideoThumb";
 import { ACTING, COMMERCIAL, NARRATIVE } from "@/data/projects";
+
+export const metadata: Metadata = {
+  title: "Alexander Guo | Director & Actor",
+  description:
+    "Alexander Guo is a director and actor based in Los Angeles working across narrative film, national commercials, and VFX.",
+  alternates: { canonical: "/" },
+};
 
 export default function Home() {
   const commercialFeatured = COMMERCIAL.slice(0, 3);

@@ -39,7 +39,7 @@ export default function Hero() {
         </h1>
         <div className="flex items-center gap-5">
           <div className="h-1 w-16 bg-[#222121]" />
-          <p className="text-[13px] font-bold tracking-[2px] text-[#222121]/55 sm:text-[15px] sm:tracking-[3px]">
+          <p className="text-[13px] font-bold tracking-[2px] text-[#222121]/70 sm:text-[15px] sm:tracking-[3px]">
             DIRECTOR &amp; ACTOR
           </p>
         </div>
@@ -73,7 +73,7 @@ export default function Hero() {
             PLAY REEL WITH SOUND
           </span>
         </button>
-        <div className="hidden font-mono text-[10px] font-semibold tracking-[1px] text-[#222121]/40 sm:block">
+        <div className="hidden font-mono text-[10px] font-semibold tracking-[1px] text-[#222121]/70 sm:block">
           SCROLL FOR SELECTED WORK ↓
         </div>
       </div>
