@@ -57,9 +57,9 @@ export default function ConceptEditorialPage() {
           <img
             src="/headshot.jpg"
             alt="Alexander Guo"
-            className="h-full w-full object-cover object-[50%_20%] grayscale contrast-[1.15]"
+            className="h-full w-full object-cover object-[50%_20%] contrast-[1.05] saturate-[1.05]"
           />
-          <div className="absolute inset-0 bg-[#ffd964] mix-blend-color opacity-[0.16]" />
+          <div className="absolute inset-0 bg-[#ffd964] mix-blend-soft-light opacity-[0.35]" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d0c]/70 via-transparent to-transparent" />
         </div>
       </section>
@@ -79,9 +79,9 @@ export default function ConceptEditorialPage() {
                 <img
                   src={youtubeThumb(project.id)}
                   alt={project.title}
-                  className="h-full w-full object-cover grayscale transition-transform duration-500 group-hover:scale-[1.03]"
+                  className="h-full w-full object-cover contrast-[1.05] saturate-[1.05] transition-transform duration-500 group-hover:scale-[1.03]"
                 />
-                <div className="absolute inset-0 bg-[#ffd964] mix-blend-color opacity-[0.14]" />
+                <div className="absolute inset-0 bg-[#ffd964] mix-blend-soft-light opacity-[0.3]" />
               </div>
               <div className="mt-4 flex items-baseline justify-between border-b border-[#f2f0ea]/10 pb-4">
                 <div className="flex items-baseline gap-4">
