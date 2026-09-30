@@ -1,13 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const STORAGE_KEY = "cookie-consent";
 
 export default function CookieConsent() {
-  const pathname = usePathname();
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -32,10 +30,10 @@ export default function CookieConsent() {
     setVisible(false);
   }
 
-  if (!visible || pathname?.startsWith("/concept-editorial")) return null;
+  if (!visible) return null;
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-40 flex flex-col items-start gap-4 border-t border-[#222121]/12 bg-[#ffd964] px-6 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-14">
+    <div className="fixed inset-x-0 bottom-0 z-40 flex flex-col items-start gap-4 border-t border-[#222121]/12 bg-[#d9d9d9] px-6 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-14">
       <p className="max-w-[560px] text-[13px] leading-[1.6] font-semibold text-[#222121]/75">
         This site uses YouTube video embeds and basic analytics, which may set cookies. See the{" "}
         <Link href="/privacy" className="border-b-2 border-[#222121]/35">
@@ -46,7 +44,7 @@ export default function CookieConsent() {
       <button
         type="button"
         onClick={accept}
-        className="shrink-0 rounded-full bg-[#222121] px-5 py-2.5 text-xs font-bold tracking-[1px] text-[#ffd964]"
+        className="shrink-0 rounded-full bg-[#222121] px-5 py-2.5 text-xs font-bold tracking-[1px] text-[#d9d9d9]"
       >
         GOT IT
       </button>
