@@ -71,7 +71,7 @@ export default function Header({ padded = true }: { padded?: boolean }) {
       </div>
 
       {open && (
-        <nav className="absolute top-full right-0 left-0 flex flex-col gap-1 border-t border-[#222121]/12 bg-[#d9d9d9] px-6 py-6 sm:hidden">
+        <nav className="absolute top-full right-0 left-0 flex flex-col gap-1 border-t border-[#222121]/12 bg-[#ffd964] px-6 py-6 sm:hidden">
           {NAV_LINKS.map((link) => {
             const active = pathname === link.href;
             return (

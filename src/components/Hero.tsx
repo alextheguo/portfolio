@@ -25,7 +25,7 @@ export default function Hero() {
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(180deg, rgba(217,217,217,.6) 0%, rgba(217,217,217,.4) 45%, rgba(217,217,217,.95) 100%)",
+            "linear-gradient(180deg, rgba(255,217,100,.6) 0%, rgba(255,217,100,.4) 45%, rgba(255,217,100,.95) 100%)",
         }}
       />
       <DustParticles />
@@ -57,7 +57,7 @@ export default function Hero() {
           }
           className="flex items-center gap-4 text-left"
         >
-          <span className="flex h-[52px] w-[52px] shrink-0 items-center justify-center rounded-full bg-[#222121] text-[#d9d9d9]">
+          <span className="flex h-[52px] w-[52px] shrink-0 items-center justify-center rounded-full bg-[#222121] text-[#ffd964]">
             <svg
               width="14"
               height="16"
