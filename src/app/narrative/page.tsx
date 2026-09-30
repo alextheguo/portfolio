@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import ThumbPlayer from "@/components/ThumbPlayer";
 import VideoThumb from "@/components/VideoThumb";
 import PlayLabel from "@/components/PlayLabel";
+import Reveal from "@/components/Reveal";
 import { NARRATIVE } from "@/data/projects";
 
 export const metadata: Metadata = {
@@ -17,14 +18,14 @@ export default function NarrativePage() {
     <div className="border-t border-[#222121]/12 pb-16">
       <Header />
 
-      <div className="flex flex-col items-start justify-between gap-4 px-6 py-8 sm:flex-row sm:items-end sm:px-14 sm:py-8">
+      <Reveal className="flex flex-col items-start justify-between gap-4 px-6 py-8 sm:flex-row sm:items-end sm:px-14 sm:py-8">
         <h1 className="font-black leading-[0.85] tracking-[-2px] text-[clamp(48px,11vw,120px)] sm:tracking-[-5px]">
           NARRATIVE
         </h1>
         <p className="max-w-[420px] text-sm font-semibold leading-[1.65] text-[#222121]/70 sm:text-right">
           Short films and clips from short films.
         </p>
-      </div>
+      </Reveal>
 
       <div className="px-6 sm:px-14">
         {NARRATIVE.map((p, i) => (

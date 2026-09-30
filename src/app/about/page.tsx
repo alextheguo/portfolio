@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
+import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
   title: "About | Alexander Guo",
@@ -13,11 +14,11 @@ export default function AboutPage() {
     <div className="border-t border-[#222121]/12">
       <Header />
 
-      <div className="px-6 py-8 sm:px-14 sm:py-8">
+      <Reveal className="px-6 py-8 sm:px-14 sm:py-8">
         <h1 className="font-black leading-[0.85] tracking-[-2px] text-[clamp(48px,11vw,120px)] sm:tracking-[-5px]">
           ABOUT
         </h1>
-      </div>
+      </Reveal>
 
       <div className="grid grid-cols-1 items-start gap-10 px-6 pb-16 sm:grid-cols-[420px_1fr] sm:gap-16 sm:px-14">
         <div className="aspect-[4/5] w-full max-w-[420px] overflow-hidden border border-[#222121]/20 bg-[#222121]">

@@ -35,13 +35,16 @@ export default function Header({ padded = true }: { padded?: boolean }) {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-xs font-bold tracking-[1.5px] transition-colors duration-150 hover:text-[#222121] ${
-                  active
-                    ? "text-[#222121] border-b-2 border-[#222121] pb-[3px]"
-                    : "text-[#222121]/70"
+                className={`group relative pb-[3px] text-xs font-bold tracking-[1.5px] transition-colors duration-150 hover:text-[#222121] ${
+                  active ? "text-[#222121]" : "text-[#222121]/70"
                 }`}
               >
                 {link.label}
+                <span
+                  className={`absolute right-0 bottom-0 left-0 h-[2px] origin-left scale-x-0 bg-[#222121] transition-transform duration-300 ease-out group-hover:scale-x-100 ${
+                    active ? "scale-x-100" : ""
+                  }`}
+                />
               </Link>
             );
           })}

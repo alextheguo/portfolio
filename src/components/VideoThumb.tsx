@@ -19,13 +19,13 @@ export default function VideoThumb({
       type="button"
       onClick={() => openVideo({ src: id, title, type: "youtube" })}
       aria-label={`Play ${title}`}
-      className={`relative block aspect-video w-full overflow-hidden border border-[#222121]/20 bg-[#222121] ${className ?? ""}`}
+      className={`group relative block aspect-video w-full overflow-hidden border border-[#222121]/20 bg-[#222121] ${className ?? ""}`}
     >
       <img
         src={youtubeThumb(id)}
         alt={title}
         onError={handleThumbFallback}
-        className="absolute inset-0 h-full w-full object-cover"
+        className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.06]"
       />
     </button>
   );

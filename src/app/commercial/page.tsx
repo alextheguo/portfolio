@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Header from "@/components/Header";
 import ThumbPlayer from "@/components/ThumbPlayer";
 import VideoThumb from "@/components/VideoThumb";
+import Reveal from "@/components/Reveal";
 import { COMMERCIAL } from "@/data/projects";
 
 export const metadata: Metadata = {
@@ -18,7 +19,7 @@ export default function CommercialPage() {
     <div className="border-t border-[#222121]/12 pb-16">
       <Header />
 
-      <div className="flex flex-col items-start justify-between gap-4 px-6 py-8 sm:flex-row sm:items-end sm:px-14 sm:py-8">
+      <Reveal className="flex flex-col items-start justify-between gap-4 px-6 py-8 sm:flex-row sm:items-end sm:px-14 sm:py-8">
         <h1 className="font-black leading-[0.85] tracking-[-2px] text-[clamp(48px,11vw,120px)] sm:tracking-[-5px]">
           COMMERCIAL
         </h1>
@@ -27,7 +28,7 @@ export default function CommercialPage() {
           for a character, a turn, and a reason to keep watching, so I build each spot around a
           story people actually want to follow, not just a product on screen.
         </p>
-      </div>
+      </Reveal>
 
       <div className="px-6 sm:px-14">
         <div className="mb-4">

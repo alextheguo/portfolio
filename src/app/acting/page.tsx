@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import YouTubeEmbed from "@/components/YouTubeEmbed";
+import Reveal from "@/components/Reveal";
 import { ACTING } from "@/data/projects";
 
 export const metadata: Metadata = {
@@ -15,9 +16,11 @@ export default function ActingPage() {
     <div className="border-t border-[#222121]/12 px-6 pb-[72px] sm:px-14">
       <Header padded={false} />
 
-      <h1 className="mb-7 font-black leading-[0.85] tracking-[-2px] text-[clamp(48px,11vw,120px)] sm:tracking-[-5px]">
-        ACTING
-      </h1>
+      <Reveal>
+        <h1 className="mb-7 font-black leading-[0.85] tracking-[-2px] text-[clamp(48px,11vw,120px)] sm:tracking-[-5px]">
+          ACTING
+        </h1>
+      </Reveal>
 
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
         <div>
