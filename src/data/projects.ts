@@ -9,12 +9,16 @@ export type Project = {
 // Newest first.
 export const COMMERCIAL: Project[] = [
   { id: "MNLG_Ar2ujQ", title: "“TARS’ First Day” | Hypercard Expense" },
-  { id: "M5K1yRy69hs", title: "“Grandma’s Birthday”" },
+  {
+    id: "M5K1yRy69hs",
+    title: "“Grandma’s Birthday”",
+    description: "1+ million views within 24 hours.",
+  },
   {
     id: "NQYnhVdDC2I",
     title: "BOTsession | LEMMA",
     description:
-      "Made it to Twitter trending in 1 day, with over 2 million likes and over 2 million views in that first day.",
+      "Made it to Twitter trending in 1 day, with over 2 million views in that first day.",
   },
   { id: "aIQLkbTeDBg", title: "“A Little Nudge” | Blinkko" },
   { id: "Opp97cZHprc", title: "Maruchan Instant Lunch, Flamin’ Hot® | Spot" },
