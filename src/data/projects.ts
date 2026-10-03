@@ -18,7 +18,7 @@ export const COMMERCIAL: Project[] = [
     id: "NQYnhVdDC2I",
     title: "BOTsession | LEMMA",
     description:
-      "Trended on Twitter within a day, with over 2 million views.",
+      "Made it to Twitter trending, over 2 million views in 24 hours.",
   },
   { id: "aIQLkbTeDBg", title: "“A Little Nudge” | Blinkko" },
   { id: "Opp97cZHprc", title: "Maruchan Instant Lunch, Flamin’ Hot® | Spot" },
