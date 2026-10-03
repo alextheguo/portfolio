@@ -26,7 +26,9 @@ export default function Home() {
       <section className="px-6 pt-12 pb-16 sm:px-14">
         <Reveal className="mb-[22px] flex items-baseline justify-between border-b border-[#222121]/12 pb-[14px]">
           <h2 className="text-2xl font-extrabold tracking-[-1px] sm:text-[34px]">
-            Commercial
+            <Link href="/commercial" className="transition-opacity duration-200 hover:opacity-60">
+              Commercial
+            </Link>
           </h2>
           <Link
             href="/commercial"
@@ -51,7 +53,9 @@ export default function Home() {
 
         <Reveal className="mb-[22px] flex items-baseline justify-between border-b border-[#222121]/12 pb-[14px]">
           <h2 className="text-2xl font-extrabold tracking-[-1px] sm:text-[34px]">
-            Narrative
+            <Link href="/narrative" className="transition-opacity duration-200 hover:opacity-60">
+              Narrative
+            </Link>
           </h2>
           <Link
             href="/narrative"
@@ -76,7 +80,11 @@ export default function Home() {
 
         <div className="grid grid-cols-1 items-center gap-8 border-t border-[#222121]/12 pt-7 sm:grid-cols-[1fr_1.2fr]">
           <Reveal className="flex flex-col gap-3.5">
-            <h2 className="text-2xl font-extrabold tracking-[-1px] sm:text-[34px]">Acting</h2>
+            <h2 className="text-2xl font-extrabold tracking-[-1px] sm:text-[34px]">
+              <Link href="/acting" className="transition-opacity duration-200 hover:opacity-60">
+                Acting
+              </Link>
+            </h2>
             <Link
               href="/acting"
               className="text-[11px] font-bold tracking-[1.5px] hover:opacity-70"
