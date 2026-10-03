@@ -31,9 +31,9 @@ export default function CommercialPage() {
       </Reveal>
 
       <div className="px-6 sm:px-14">
-        <div className="mb-4">
+        <Reveal className="mb-4">
           <ThumbPlayer id={latest.id} title={latest.title} playing />
-        </div>
+        </Reveal>
         <div className="mb-6 flex items-baseline justify-between border-b border-[#222121]/12 pb-5">
           <h2 className="text-2xl font-extrabold tracking-[-1px] sm:text-[44px] sm:tracking-[-1.5px]">
             {latest.title}
@@ -47,8 +47,8 @@ export default function CommercialPage() {
         )}
 
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {rest.map((p) => (
-            <div key={p.id}>
+          {rest.map((p, i) => (
+            <Reveal key={p.id} delay={(i % 4) * 100}>
               <VideoThumb id={p.id} title={p.title} />
               <div className="mt-3 text-[17px] font-extrabold tracking-[-0.5px]">{p.title}</div>
               {p.description && (
@@ -56,7 +56,7 @@ export default function CommercialPage() {
                   {p.description}
                 </p>
               )}
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>

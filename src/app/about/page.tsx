@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Reveal from "@/components/Reveal";
+import ParallaxImage from "@/components/ParallaxImage";
 
 export const metadata: Metadata = {
   title: "About | Alexander Guo",
@@ -21,14 +22,12 @@ export default function AboutPage() {
       </Reveal>
 
       <div className="grid grid-cols-1 items-start gap-10 px-6 pb-16 sm:grid-cols-[420px_1fr] sm:gap-16 sm:px-14">
-        <div className="aspect-[4/5] w-full max-w-[420px] overflow-hidden border border-[#222121]/20 bg-[#222121]">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/headshot.jpg"
-            alt="Alexander Guo"
-            className="h-full w-full object-cover object-[50%_25%]"
-          />
-        </div>
+        <ParallaxImage
+          src="/headshot.jpg"
+          alt="Alexander Guo"
+          className="aspect-[4/5] w-full max-w-[420px] overflow-hidden border border-[#222121]/20 bg-[#222121]"
+          imgClassName="h-full w-full object-cover object-[50%_25%]"
+        />
 
         <div className="flex flex-col gap-9">
           <h2 className="max-w-[760px] text-2xl leading-[1.25] font-extrabold tracking-[-1px] sm:text-[34px]">

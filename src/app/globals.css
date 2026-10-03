@@ -61,3 +61,11 @@ body {
   animation-iteration-count: infinite;
   pointer-events: none;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-item {
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}

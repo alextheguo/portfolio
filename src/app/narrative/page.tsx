@@ -29,7 +29,7 @@ export default function NarrativePage() {
 
       <div className="px-6 sm:px-14">
         {NARRATIVE.map((p, i) => (
-          <div
+          <Reveal
             key={p.id}
             className="grid grid-cols-[120px_1fr] items-center gap-4 border-t border-[#222121]/12 py-5 sm:grid-cols-[340px_1fr_120px] sm:gap-9 sm:py-[26px]"
           >
@@ -50,7 +50,7 @@ export default function NarrativePage() {
                 <PlayLabel id={p.id} title={p.title} />
               )}
             </div>
-          </div>
+          </Reveal>
         ))}
       </div>
     </div>

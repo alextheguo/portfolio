@@ -2,6 +2,7 @@
 
 import Header from "@/components/Header";
 import DustParticles from "@/components/DustParticles";
+import Parallax from "@/components/Parallax";
 import { useVideoLightbox } from "@/components/VideoLightboxProvider";
 import { HOME_REEL_ID } from "@/data/projects";
 
@@ -12,15 +13,17 @@ export default function Hero() {
 
   return (
     <section className="relative flex h-[900px] max-h-[100vh] flex-col overflow-hidden">
-      <video
-        className="absolute inset-0 h-full w-full object-cover"
-        style={{ filter: "blur(2px)", transform: "scale(1.02)" }}
-        src={HERO_VIDEO_SRC}
-        autoPlay
-        muted
-        loop
-        playsInline
-      />
+      <Parallax speed={0.3} className="absolute inset-0">
+        <video
+          className="h-full w-full object-cover"
+          style={{ filter: "blur(2px)", transform: "scale(1.02)" }}
+          src={HERO_VIDEO_SRC}
+          autoPlay
+          muted
+          loop
+          playsInline
+        />
+      </Parallax>
       <div
         className="absolute inset-0"
         style={{
@@ -32,7 +35,11 @@ export default function Hero() {
 
       <Header />
 
-      <div className="relative z-10 flex flex-1 flex-col justify-center gap-6 px-6 sm:px-14">
+      <Parallax
+        speed={0.18}
+        fade
+        className="relative z-10 flex flex-1 flex-col justify-center gap-6 px-6 sm:px-14"
+      >
         <h1 className="font-black leading-[0.82] tracking-[-4px] text-[clamp(52px,13vw,190px)] sm:tracking-[-8px]">
           <span className="block">ALEXANDER</span>
           <span className="block">GUO</span>
@@ -43,7 +50,7 @@ export default function Hero() {
             DIRECTOR &amp; ACTOR
           </p>
         </div>
-      </div>
+      </Parallax>
 
       <div className="relative z-10 flex items-center justify-between px-6 py-6 sm:px-14 sm:py-10">
         <button
