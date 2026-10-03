@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
-import ThumbPlayer from "@/components/ThumbPlayer";
 import VideoThumb from "@/components/VideoThumb";
 import Reveal from "@/components/Reveal";
 import { COMMERCIAL } from "@/data/projects";
@@ -32,7 +31,7 @@ export default function CommercialPage() {
 
       <div className="px-6 sm:px-14">
         <Reveal className="mb-4">
-          <ThumbPlayer id={latest.id} title={latest.title} playing />
+          <VideoThumb id={latest.id} title={latest.title} />
         </Reveal>
         <div className="mb-6 flex items-baseline justify-between border-b border-[#222121]/12 pb-5">
           <h2 className="text-2xl font-extrabold tracking-[-1px] sm:text-[44px] sm:tracking-[-1.5px]">
