@@ -37,6 +37,11 @@ export default function Home() {
             <div key={p.id}>
               <VideoThumb id={p.id} title={p.title} />
               <div className="mt-3 text-xl font-extrabold tracking-[-0.5px]">{p.title}</div>
+              {p.description && (
+                <p className="mt-1.5 text-[13px] leading-[1.55] font-semibold text-[#222121]/75">
+                  {p.description}
+                </p>
+              )}
             </div>
           ))}
         </div>
@@ -57,6 +62,11 @@ export default function Home() {
             <div key={p.id}>
               <VideoThumb id={p.id} title={p.title} />
               <div className="mt-3 text-xl font-extrabold tracking-[-0.5px]">{p.title}</div>
+              {p.description && (
+                <p className="mt-1.5 text-[13px] leading-[1.55] font-semibold text-[#222121]/75">
+                  {p.description}
+                </p>
+              )}
             </div>
           ))}
         </div>

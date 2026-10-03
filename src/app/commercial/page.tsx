@@ -40,12 +40,22 @@ export default function CommercialPage() {
           </h2>
           <div className="font-mono text-[11px] font-bold">LATEST</div>
         </div>
+        {latest.description && (
+          <p className="-mt-3 mb-6 max-w-[640px] text-[15px] leading-[1.6] font-semibold text-[#222121]/75">
+            {latest.description}
+          </p>
+        )}
 
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {rest.map((p) => (
             <div key={p.id}>
               <VideoThumb id={p.id} title={p.title} />
               <div className="mt-3 text-[17px] font-extrabold tracking-[-0.5px]">{p.title}</div>
+              {p.description && (
+                <p className="mt-1.5 text-[13px] leading-[1.55] font-semibold text-[#222121]/75">
+                  {p.description}
+                </p>
+              )}
             </div>
           ))}
         </div>
