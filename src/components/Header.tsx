@@ -24,18 +24,19 @@ export default function Header({ padded = true }: { padded?: boolean }) {
           padded ? "px-6 py-8 sm:px-14 sm:py-10" : "py-8 sm:py-10"
         }`}
       >
-        <Link href="/" className="block shrink-0" onClick={() => setOpen(false)}>
+        <Link href="/" className="intro-logo block shrink-0" onClick={() => setOpen(false)}>
           <Image src="/logo-mark.png" alt="Alexander Guo" width={44} height={44} priority />
         </Link>
 
         <nav className="hidden sm:flex sm:gap-9">
-          {NAV_LINKS.map((link) => {
+          {NAV_LINKS.map((link, i) => {
             const active = pathname === link.href;
             return (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`group relative pb-[3px] text-xs font-bold tracking-[1.5px] transition-colors duration-150 hover:text-[#222121] ${
+                style={{ "--i": i } as React.CSSProperties}
+                className={`intro-nav group relative pb-[3px] text-xs font-bold tracking-[1.5px] transition-colors duration-150 hover:text-[#222121] ${
                   active ? "text-[#222121]" : "text-[#222121]/70"
                 }`}
               >
@@ -55,7 +56,7 @@ export default function Header({ padded = true }: { padded?: boolean }) {
           onClick={() => setOpen((v) => !v)}
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
-          className="flex h-9 w-9 flex-col items-center justify-center gap-[5px] sm:hidden"
+          className="intro-nav flex h-9 w-9 flex-col items-center justify-center gap-[5px] sm:hidden"
         >
           <span
             className={`h-[2px] w-6 bg-[#222121] transition-transform duration-200 ${

@@ -41,10 +41,18 @@ export default function Hero() {
         className="relative z-10 flex flex-1 flex-col justify-center gap-6 px-6 sm:px-14"
       >
         <h1 className="font-black leading-[0.82] tracking-[-4px] text-[clamp(52px,13vw,190px)] sm:tracking-[-8px]">
-          <span className="block">ALEXANDER</span>
-          <span className="block">GUO</span>
+          <span className="block" style={{ clipPath: "inset(-0.15em -0.1em -0.03em -0.1em)" }}>
+            <span className="intro-title block" style={{ "--i": 0 } as React.CSSProperties}>
+              ALEXANDER
+            </span>
+          </span>
+          <span className="block" style={{ clipPath: "inset(-0.15em -0.1em -0.03em -0.1em)" }}>
+            <span className="intro-title block" style={{ "--i": 1 } as React.CSSProperties}>
+              GUO
+            </span>
+          </span>
         </h1>
-        <div className="flex items-center gap-5">
+        <div className="intro-after flex items-center gap-5">
           <div className="h-1 w-16 bg-[#222121]" />
           <p className="text-[13px] font-bold tracking-[2px] text-[#222121]/70 sm:text-[15px] sm:tracking-[3px]">
             DIRECTOR &amp; ACTOR
@@ -52,7 +60,7 @@ export default function Hero() {
         </div>
       </Parallax>
 
-      <div className="relative z-10 flex items-center justify-between px-6 py-6 sm:px-14 sm:py-10">
+      <div className="intro-after relative z-10 flex items-center justify-between px-6 py-6 sm:px-14 sm:py-10">
         <button
           type="button"
           onClick={() =>

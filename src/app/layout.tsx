@@ -42,8 +42,14 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${inter.variable} h-full antialiased`}>
+    <html lang="en" className={`${inter.variable} h-full antialiased`} suppressHydrationWarning>
       <body className="min-h-full flex flex-col">
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "(function(){var d=document.documentElement;d.dataset.intro='play';setTimeout(function(){delete d.dataset.intro},3500)})()",
+          }}
+        />
         <VideoLightboxProvider>
           {children}
           <Footer />
