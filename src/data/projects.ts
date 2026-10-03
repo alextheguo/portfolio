@@ -8,7 +8,11 @@ export type Project = {
 
 // Newest first.
 export const COMMERCIAL: Project[] = [
-  { id: "MNLG_Ar2ujQ", title: "“TARS’ First Day” | Hypercard Expense" },
+  {
+    id: "MNLG_Ar2ujQ",
+    title: "“TARS’ First Day” | Hypercard Expense",
+    description: "Partnered with celebrity actor Creed Bratton from the TV show The Office.",
+  },
   {
     id: "M5K1yRy69hs",
     title: "“Grandma’s Birthday”",
