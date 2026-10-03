@@ -3,7 +3,6 @@ import Header from "@/components/Header";
 import VideoThumb from "@/components/VideoThumb";
 import PlayLabel from "@/components/PlayLabel";
 import Reveal from "@/components/Reveal";
-import ScrollMarquee from "@/components/ScrollMarquee";
 import { NARRATIVE } from "@/data/projects";
 
 export const metadata: Metadata = {
@@ -26,12 +25,6 @@ export default function NarrativePage() {
           Short films and clips from short films.
         </p>
       </Reveal>
-
-      <ScrollMarquee
-        reverse
-        phrase="NARRATIVE  /  SHORT FILMS  /  VFX  /  "
-        className="mb-6"
-      />
 
       <div className="px-6 sm:px-14">
         {NARRATIVE.map((p, i) => (

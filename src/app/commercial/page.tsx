@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Header from "@/components/Header";
 import VideoThumb from "@/components/VideoThumb";
 import Reveal from "@/components/Reveal";
-import ScrollMarquee from "@/components/ScrollMarquee";
 import { COMMERCIAL } from "@/data/projects";
 
 export const metadata: Metadata = {
@@ -29,8 +28,6 @@ export default function CommercialPage() {
           story people actually want to follow, not just a product on screen.
         </p>
       </Reveal>
-
-      <ScrollMarquee phrase="COMMERCIAL  /  BRAND STORIES  /  30 SECONDS  /  " className="mb-8" />
 
       <div className="px-6 sm:px-14">
         <Reveal className="mb-4">

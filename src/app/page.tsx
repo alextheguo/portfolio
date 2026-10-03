@@ -78,13 +78,7 @@ export default function Home() {
           ))}
         </div>
 
-        <ScrollMarquee
-          reverse
-          phrase="SELECTED WORK  /  STORY FIRST  /  2026  /  "
-          className="-mx-6 mb-10 sm:-mx-14"
-        />
-
-        <div className="grid grid-cols-1 items-center gap-8 pt-2 sm:grid-cols-[1fr_1.2fr]">
+        <div className="grid grid-cols-1 items-center gap-8 border-t border-[#222121]/12 pt-7 sm:grid-cols-[1fr_1.2fr]">
           <Reveal className="flex flex-col gap-3.5">
             <h2 className="text-2xl font-extrabold tracking-[-1px] sm:text-[34px]">
               <Link href="/acting" className="transition-opacity duration-200 hover:opacity-60">

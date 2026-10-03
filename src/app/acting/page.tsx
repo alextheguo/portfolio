@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Header from "@/components/Header";
 import VideoThumb from "@/components/VideoThumb";
 import Reveal from "@/components/Reveal";
-import ScrollMarquee from "@/components/ScrollMarquee";
 import { ACTING } from "@/data/projects";
 
 export const metadata: Metadata = {
@@ -22,11 +21,6 @@ export default function ActingPage() {
           ACTING
         </h1>
       </Reveal>
-
-      <ScrollMarquee
-        phrase="ACTING  /  DRAMA  /  COMEDY  /  "
-        className="-mx-6 mb-8 sm:-mx-14"
-      />
 
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
         <div>
