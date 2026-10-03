@@ -72,16 +72,17 @@ export default function Header({ padded = true }: { padded?: boolean }) {
       </div>
 
       {open && (
-        <nav className="absolute top-full right-0 left-0 flex flex-col gap-1 border-t border-[#222121]/12 bg-[#ffd964] px-6 py-6 sm:hidden">
-          {NAV_LINKS.map((link) => {
+        <nav className="menu-enter fixed inset-0 z-0 flex flex-col justify-center gap-1 bg-[#ffd964]/35 px-6 pt-20 backdrop-blur-xl sm:hidden">
+          {NAV_LINKS.map((link, i) => {
             const active = pathname === link.href;
             return (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className={`py-2.5 text-sm font-bold tracking-[1.5px] ${
-                  active ? "text-[#222121]" : "text-[#222121]/70"
+                style={{ "--i": i } as React.CSSProperties}
+                className={`menu-link py-2 text-[40px] leading-[1.1] font-black tracking-[-1.5px] ${
+                  active ? "text-[#222121]" : "text-[#222121]/75"
                 }`}
               >
                 {link.label}
