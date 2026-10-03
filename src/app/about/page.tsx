@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Reveal from "@/components/Reveal";
+import ScrollMarquee from "@/components/ScrollMarquee";
 import ParallaxImage from "@/components/ParallaxImage";
 
 export const metadata: Metadata = {
@@ -20,6 +21,12 @@ export default function AboutPage() {
           ABOUT
         </h1>
       </Reveal>
+
+      <ScrollMarquee
+        reverse
+        phrase="FILMMAKER  /  ACTOR  /  LOS ANGELES  /  "
+        className="mb-10"
+      />
 
       <div className="grid grid-cols-1 items-start gap-10 px-6 pb-16 sm:grid-cols-[420px_1fr] sm:gap-16 sm:px-14">
         <ParallaxImage

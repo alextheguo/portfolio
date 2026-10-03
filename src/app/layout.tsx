@@ -6,6 +6,7 @@ import VideoLightboxProvider from "@/components/VideoLightboxProvider";
 import Footer from "@/components/Footer";
 import CookieConsent from "@/components/CookieConsent";
 import ScrollProgress from "@/components/ScrollProgress";
+import BackgroundMotion from "@/components/BackgroundMotion";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -55,6 +56,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <Footer />
         </VideoLightboxProvider>
         <CookieConsent />
+        <BackgroundMotion />
         <ScrollProgress />
         <Analytics />
       </body>
