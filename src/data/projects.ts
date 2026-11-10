@@ -36,7 +36,6 @@ export const COMMERCIAL: Project[] = [
 // Newest first.
 export const NARRATIVE: Project[] = [
   { id: "R-of3WR9EVg", title: "Veins" },
-  { id: "7AV_8Ull09g", title: "USB" },
 ];
 
 export const ACTING = {
