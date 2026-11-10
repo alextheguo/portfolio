@@ -37,7 +37,6 @@ export const COMMERCIAL: Project[] = [
 export const NARRATIVE: Project[] = [
   { id: "R-of3WR9EVg", title: "Veins" },
   { id: "7AV_8Ull09g", title: "USB" },
-  { id: "XAHEjHXXmYo", title: "Criterion" },
   { id: "UratXCFXYGw", title: "OCFF" },
   { id: "tQun-GQBrXk", title: "Best of Three" },
   { id: "aw1uku7Yz9c", title: "Free Ice Cream" },
