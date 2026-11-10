@@ -8,7 +8,7 @@ import { NARRATIVE } from "@/data/projects";
 export const metadata: Metadata = {
   title: "Narrative | Alexander Guo",
   description:
-    "Short films and narrative work directed by Alexander Guo, including Veins, USB, and Best of Three.",
+    "Short films and narrative work directed by Alexander Guo, including Veins and USB.",
   alternates: { canonical: "/narrative" },
 };
 
