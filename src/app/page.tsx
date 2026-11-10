@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   const commercialFeatured = COMMERCIAL.slice(0, 3);
-  const narrativeFeatured = NARRATIVE.slice(0, 3);
+  const narrativeFeature = NARRATIVE[0];
 
   return (
     <div>
@@ -51,32 +51,37 @@ export default function Home() {
           ))}
         </div>
 
-        <Reveal className="mb-[22px] flex items-baseline justify-between border-b border-[#222121]/12 pb-[14px]">
-          <h2 className="text-2xl font-extrabold tracking-[-1px] sm:text-[34px]">
-            <Link href="/narrative" className="transition-opacity duration-200 hover:opacity-60">
-              Narrative
-            </Link>
-          </h2>
-          <Link
-            href="/narrative"
-            className="text-[11px] font-bold tracking-[1.5px] hover:opacity-70"
-          >
-            VIEW ALL ({NARRATIVE.length}) →
-          </Link>
-        </Reveal>
-        <div className="mb-[52px] grid grid-cols-1 gap-5 sm:grid-cols-3">
-          {narrativeFeatured.map((p, i) => (
-            <Reveal key={p.id} delay={i * 120}>
-              <VideoThumb id={p.id} title={p.title} />
-              <div className="mt-3 text-xl font-extrabold tracking-[-0.5px]">{p.title}</div>
-              {p.description && (
+        {narrativeFeature && (
+          <div className="mb-[52px] grid grid-cols-1 items-center gap-8 border-t border-[#222121]/12 pt-7 sm:grid-cols-[1.2fr_1fr] sm:gap-14">
+            <Reveal className="flex flex-col gap-3.5 sm:order-2 sm:items-end sm:text-right">
+              <h2 className="text-2xl font-extrabold tracking-[-1px] sm:text-[34px]">
+                <Link
+                  href="/narrative"
+                  className="transition-opacity duration-200 hover:opacity-60"
+                >
+                  Narrative
+                </Link>
+              </h2>
+              <Link
+                href="/narrative"
+                className="text-[11px] font-bold tracking-[1.5px] hover:opacity-70"
+              >
+                VIEW ALL ({NARRATIVE.length}) →
+              </Link>
+            </Reveal>
+            <Reveal className="sm:order-1">
+              <VideoThumb id={narrativeFeature.id} title={narrativeFeature.title} />
+              <div className="mt-3 text-xl font-extrabold tracking-[-0.5px]">
+                {narrativeFeature.title}
+              </div>
+              {narrativeFeature.description && (
                 <p className="mt-1.5 text-[13px] leading-[1.55] font-semibold text-[#222121]/75">
-                  {p.description}
+                  {narrativeFeature.description}
                 </p>
               )}
             </Reveal>
-          ))}
-        </div>
+          </div>
+        )}
 
         <div className="grid grid-cols-1 items-center gap-8 border-t border-[#222121]/12 pt-7 sm:grid-cols-[1fr_1.2fr]">
           <Reveal className="flex flex-col gap-3.5">
